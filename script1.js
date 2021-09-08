@@ -36,11 +36,19 @@ get(child(dbref, `poll/${id}`)).then((snapshot) => {
       name.innerHTML = poll.name
       let div = document.getElementById('div-options')
       for (let i=0;i<poll.options.length;i++){
-          let option = poll.options[i]
+          let option = poll.options[i].opt
           let btn = document.createElement('button')
           btn.innerHTML = option
           btn.setAttribute("class","btn btn-outline-primary btn-style-1") 
           btn.setAttribute("type","button")
+          btn.addEventListener('click',()=>{
+              let value = poll.options[i].value
+              value++
+              poll.options[i].value = value
+              const wdbref = ref(db,'poll/'+id)
+              set(wdbref,poll)
+
+          })
           div.append(btn)
       }
     } else {

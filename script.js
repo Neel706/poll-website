@@ -26,13 +26,21 @@ function submit123(){
     let id = time
     object["name"]=poll_name
     for (let i=0;i<no_options;i++){
-        options[i] = document.querySelector('#option'+i).value
+        let items={}
+        items["opt"] =  document.querySelector('#option'+i).value 
+        items["value"] = 0
+        options[i] = items
     }
     object["options"]=options
     const dbref = ref(db,'poll/'+id)
     let url = "preview.html?"+id
     set(dbref,object)
     window.open(url)
+    // setTimeout(location.reload(),5000)
+    setTimeout(() => {
+        console.log("printed")
+        location.reload()
+    }, 3000);
 
 
 
