@@ -1,12 +1,7 @@
- // Import the functions you need from the SDKs you need
  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.0.1/firebase-app.js";
  import {getDatabase , ref , set } from 'https://www.gstatic.com/firebasejs/9.0.1/firebase-database.js'; 
  import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.0.1/firebase-analytics.js";
- // TODO: Add SDKs for Firebase products that you want to use
- // https://firebase.google.com/docs/web/setup#available-libraries
 
- // Your web app's Firebase configuration
- // For Firebase JS SDK v7.20.0 and later, measurementId is optional
  const firebaseConfig = {
    apiKey: "AIzaSyABEdMzk6ANQDpCyUA7tJKQAQf5S7vDjwk",
    authDomain: "my-poll-app-60ee1.firebaseapp.com",
@@ -18,12 +13,11 @@
    measurementId: "G-ZMERHGPMHR"
  };
                   
- // Initialize Firebase
- const app = initializeApp(firebaseConfig);
- const analytics = getAnalytics(app);
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
+const db = getDatabase()
 
-
-function submit123(){
+function submit123(){    
     let poll_name = document.querySelector('#pollname').value
     let no_options = document.querySelector('#selection').value
     let options={}
@@ -35,7 +29,6 @@ function submit123(){
         options[i] = document.querySelector('#option'+i).value
     }
     object["options"]=options
-    const db = getDatabase()
     const dbref = ref(db,'poll/'+id)
     let url = "preview.html!"+id
     set(dbref,object)
