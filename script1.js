@@ -18,21 +18,37 @@ const analytics = getAnalytics(app);
 const db = getDatabase()
 
 let url = window.location.href
-
-let tmp = url.split("!")
+console.log(url)
+let tmp = url.split("?")
 
 let id = tmp[1]
 
+console.log(id)
 const dbref = ref(db)
 
-get(child(dbref, `poll'/${id}`)).then((snapshot) => {
+
+get(child(dbref, `poll/${id}`)).then((snapshot) => {
+    console.log(`poll/${id}`)
     if (snapshot.exists()) {
       console.log(snapshot.val());
+      let poll = snapshot.val()
+      let name = document.getElementById('h1-for-poll-name')
+      name.innerHTML = poll.name
+      let div = document.getElementById('div-options')
+      for (let i=0;i<poll.options.length;i++){
+          let option = poll.options[i]
+          let btn = document.createElement('button')
+          btn.innerHTML = option
+          btn.setAttribute("class","btn btn-outline-primary btn-style-1") 
+          btn.setAttribute("type","button")
+          div.append(btn)
+      }
     } else {
       console.log("No data available");
     }
   }).catch((error) => {
     console.error(error);
   });
+
 
 

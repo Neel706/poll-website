@@ -30,7 +30,7 @@ function submit123(){
     }
     object["options"]=options
     const dbref = ref(db,'poll/'+id)
-    let url = "preview.html!"+id
+    let url = "preview.html?"+id
     set(dbref,object)
     window.open(url)
 
