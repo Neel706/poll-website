@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
 .container-1{
     align-items: center;
     text-align: center;
@@ -26,4 +28,32 @@
 }
 .btn-group-vertical>.btn, .btn-group-vertical>.btn-group {
     width: 50vw;
+}
+
+.span-style{
+    text-align: right;
+    float: right;
+    color: black;
+}
+.text-muted{
+    color: black!important;
+}
+
+.poll-random{
+    width: 80vw!important;
+    height: 70px!important;
+    font-family: 'Roboto', sans-serif;
+}
+
+.small-time{
+    float: right;
+    position: absolute;
+    top: 8px;
+    right: 16px;
+}
+.small-views{
+    float: right;
+    position: absolute;
+    bottom: 5px;
+    right: 16px;
 }

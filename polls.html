@@ -1,18 +1,15 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
+    <title>polls</title>
 
-    <title>New Poll</title>
 </head>
-
 <body>
     <div class="mb-3">
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -26,7 +23,7 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">New poll</a>
+                            <a class="nav-link active" aria-current="page" href="index.html">New poll</a>
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
@@ -34,12 +31,22 @@
                                 polls
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="#">random polls</a></li>
+                                <!-- <li><a class="dropdown-item" href="#">random polls</a></li> -->
                                 <li><a class="dropdown-item" href="#">your polls</a></li>
                                 <li>
                                     <hr class="dropdown-divider">
                                 </li>
                                 <li><a class="dropdown-item" href="#">history</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown-account" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Accounts
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="#">log in</a></li>
+                                <li><a class="dropdown-item" href="#">sign up</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -49,25 +56,19 @@
                     </form>
                 </div>
             </div>
-        </nav>
+        </nav>    
         <div class="container container-1" >
-            <h1 id="h1-for-poll-name">Poll Name</h1>
-            <div class="btn-group-vertical" role="group" aria-label="Basic outlined example" id="div-options">
-              </div>
+            <div class="btn-group-vertical" role="group" aria-label="Basic outlined example" id="div-polls">
+                <!-- <button type="button" class="btn btn-outline-primary btn-style-1 poll-random">
+                    <h4>poll name</h4><p>by user</p> <span class="small-time"><small>time</small></span> <span class="small-views"> <small>views</small></span> -->
+                </button>
+            </div>
         </div>
 
 
-
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
-            crossorigin="anonymous"></script>       
-        <script type="module" src="script_preview.js"></script>
-
-    
-
-
-
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
+    crossorigin="anonymous"></script> 
+    <script type=module src="encryted_code\script_random_Polls_encrypted.js"></script>   
 </body>
-
 </html>
